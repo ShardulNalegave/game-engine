@@ -1,0 +1,11 @@
+
+# Pycache Folders
+__pycache__/
+experiments/__pycache__
+engine/__pycache__
+engine/components/__pycache__
+engine/components/Object3D/__pycache__
+
+# Others
+venv/
+.vscode/
