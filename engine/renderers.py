@@ -8,12 +8,12 @@ from utils import *
 from components.Object3D.Box import Box
 
 class Renderer3D:
-	def __init__(self, size):
+	def __init__(self, size, fov, nearClip, farClip):
 		self.size = size
 		self.objects = {}
-		self.fov = None
-		self.nearClip = None
-		self.farClip = None
+		self.fov = fov
+		self.nearClip = nearClip
+		self.farClip = farClip
 		self.aspectRatio = size[0] / size[1]
 		self.cameraPos = Vector3D(0, 0, 0)
 
