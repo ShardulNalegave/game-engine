@@ -8,6 +8,7 @@ This folder consists the main code for the game engine.
 - `README.md` -> This file
 - `utils.py` -> This file contains classes like `Vector3D`
 - `__main__.py` -> Main file. The file to run the project.
+- `application.py` -> Application class.
 - `renderers.py` -> Contains the code for renderers like `Renderer3D`
 - `components/`
 	- `Plotter.py` -> Contains the code for the custom coordinate system. __**To be implemented**__
