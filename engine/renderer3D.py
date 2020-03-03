@@ -47,8 +47,6 @@ class Renderer3D:
 		for objName, obj in self.objects.items():
 			obj.shift(self.camera.pos.additive())
 			obj.render()
-		# self.objects["test_1"].render()
-		# self.objects["test_2"].render()
 
 # ================================================================================================
 
