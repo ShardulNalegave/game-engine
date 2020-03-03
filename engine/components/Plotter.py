@@ -48,3 +48,11 @@ class Plotter:
 		glVertex3fv(vec3.toTuple())
 		glVertex3fv(vec4.toTuple())
 		glEnd()
+
+	# Polygon
+	def polygon(self, vecs):
+		""" Draws a Polygon using vertexes in list `vecs` """
+		glBegin(GL_QUADS)
+		for vec in vecs:
+			glVertex3fv(vec.toTuple())
+		glEnd()
