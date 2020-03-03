@@ -7,11 +7,12 @@ from utils import *
 
 
 class Box:
-	def __init__(self, name, origin, scale):
+	def __init__(self, name, origin, scale, plotter):
 		self.name = name
 		self.origin = origin
-		self.shiftVal = Vector3D(0, 0, 0)
+		self.plotter = plotter
 		self.scale = scale
+		self.shiftVal = Vector3D(0, 0, 0)
 		self.rotateOn = Vector3D(0, 0, 0)
 		self.rotated = 0
 		self.rotateDegrees = 0
