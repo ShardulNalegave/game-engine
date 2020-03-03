@@ -15,13 +15,13 @@ class Renderer3D:
 		self.nearClip = nearClip
 		self.farClip = farClip
 		self.aspectRatio = size.x / size.y
-		self.cameraPos = Vector3D(0, 0, 0)
+		self.camera = Camera3D(Vector3D(0, 0, 0))
 
 	def updateSize(self, vec):
 		self.size = vec
 		glViewport(0, 0, vec.x, vec.y)
 		self.setPerspective(self.fov, vec.x/vec.y, self.nearClip, self.farClip)
-		self.moveCamera(Vector3D(0, 0, 5))
+		self.camera.move(Vector3D(0, 0, 5))
 
 	# ===== Perspective =====
 
@@ -34,12 +34,6 @@ class Renderer3D:
 		self.nearClip = nearClip
 		self.farClip = farClip
 
-	# ===== Camera =====
-
-	def moveCamera(self, vec):
-		# glTranslatef(vec.x, vec.y, vec.z)
-		self.cameraPos.add(vec, True)
-
 	# ===== Objects =====
 
 	def addObject(self, obj):
@@ -51,7 +45,7 @@ class Renderer3D:
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 		# print(self.cameraPos.z)
 		for objName, obj in self.objects.items():
-			obj.shift(self.cameraPos.additive())
+			obj.shift(self.camera.pos.additive())
 			obj.render()
 		# self.objects["test_1"].render()
 		# self.objects["test_2"].render()
@@ -67,4 +61,4 @@ class Camera3D:
 	# Move
 	def move(self, vec):
 		""" Changes the viewpoint of the whole scene """
-		pass
+		self.pos.add(vec, autoSet=True)
