@@ -16,8 +16,11 @@ class Plotter:
 
 
 	# Point
-	def point(self):
-		pass
+	def point(self, vec):
+		""" Draws a point at vertex `vec` """
+		glBegin(GL_POINTS)
+		glVertex3fv(vec.toTuple())
+		glEnd()
 
 	# Line
 	def line(self, vec1, vec2):
