@@ -29,3 +29,12 @@ class Plotter:
 		glVertex3fv(vec1.toTuple())
 		glVertex3fv(vec2.toTuple())
 		glEnd()
+
+	# Triangle
+	def triangle(self, vec1, vec2, vec3):
+		""" Draws a triangle using vertexes `vec1`, `vec2` and `vec3` """
+		glBegin(GL_TRIANGLES)
+		glVertex3fv(vec1.toTuple())
+		glVertex3fv(vec2.toTuple())
+		glVertex3fv(vec3.toTuple())
+		glEnd()
