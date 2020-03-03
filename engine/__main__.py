@@ -11,6 +11,7 @@ from utils import *
 
 # Initialize the Application
 app = Application("Test...")
+app.renderer3D.camera.setCamPos(Vector3D(0, 0, 3))
 
 # Add Objects to the class
 app.renderer3D.addObject(Box("test_1", Vector3D(0, 0, 0), Vector3D(2, 2, 2)))
