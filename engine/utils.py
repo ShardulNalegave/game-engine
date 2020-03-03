@@ -64,3 +64,64 @@ class Vector3D:
 			return Vector3D(-(self.x), -(self.y), -(self.z))
 		else:
 			None
+
+
+class Vector2D:
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+	
+	# ===== Conversions =====
+	
+	def toTuple(self):
+		return (self.x, self.y)
+
+	def __str__(self):
+		return "{}".format(self.toTuple())
+
+	# ===== Operations =====
+
+	def add(self, vec, autoSet=False):
+		if autoSet:
+			self.x += vec.x
+			self.y += vec.y
+		elif not autoSet:
+			return Vector3D(self.x + vec.x, self.y + vec.y)
+		else:
+			return None
+	
+	def minus(self, vec, autoSet=False):
+		if autoSet:
+			self.x -= vec.x
+			self.y -= vec.y
+		elif not autoSet:
+			return Vector3D(self.x - vec.x, self.y - vec.y)
+		else:
+			return None
+
+	def multiply(self, vec, autoSet=False):
+		if autoSet:
+			self.x *= vec.x
+			self.y *= vec.y
+		elif not autoSet:
+			return Vector3D(self.x * vec.x, self.y * vec.y)
+		else:
+			return None
+
+	def divide(self, vec, autoSet=False):
+		if autoSet:
+			self.x /= vec.x
+			self.y /= vec.y
+		elif not autoSet:
+			return Vector3D(self.x / vec.x, self.y / vec.y)
+		else:
+			return None
+
+	def additive(self, autoSet=False):
+		if autoSet:
+			self.x = -(self.x)
+			self.y = -(self.y)
+		elif not autoSet:
+			return Vector3D(-(self.x), -(self.y))
+		else:
+			None
