@@ -14,13 +14,13 @@ class Renderer3D:
 		self.fov = fov
 		self.nearClip = nearClip
 		self.farClip = farClip
-		self.aspectRatio = size[0] / size[1]
+		self.aspectRatio = size.x / size.y
 		self.cameraPos = Vector3D(0, 0, 0)
 
-	def updateSize(self, width, height):
-		self.size = (width, height)
-		glViewport(0, 0, width, height)
-		self.setPerspective(self.fov, width/height, self.nearClip, self.farClip)
+	def updateSize(self, vec):
+		self.size = vec
+		glViewport(0, 0, vec.x, vec.y)
+		self.setPerspective(self.fov, vec.x/vec.y, self.nearClip, self.farClip)
 		self.moveCamera(Vector3D(0, 0, 5))
 
 	# ===== Perspective =====

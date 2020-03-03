@@ -10,7 +10,7 @@ from components.Object3D.Box import Box
 from utils import *
 
 # Initialize the Application
-app = Application("Test...", size=(1000, 600))
+app = Application("Test...")
 
 # Add Objects to the class
 app.renderer3D.addObject(Box("test_1", Vector3D(0, 0, 0), Vector3D(2, 2, 2)))

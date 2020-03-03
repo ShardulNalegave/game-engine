@@ -21,7 +21,7 @@ from utils import *
 class Application:
 
 	# Init class
-	def __init__(self, title, size=(800, 600)):
+	def __init__(self, title, size=Vector2D(1000, 600)):
 		""" Defines all the required initial things. """
 		self.title = title
 		self.size = size
@@ -30,10 +30,10 @@ class Application:
 	# Update Size
 	def updateSize(self, width, height):
 		""" Event triggered when the application window is resized. """
-		self.size = (width, height)
+		self.size = Vector2D(width, height)
 
 		# Trigger the resize event in the renderers
-		self.renderer3D.updateSize(width, height)
+		self.renderer3D.updateSize(Vector2D(width, height))
 
 	# Run
 	def run(self):
@@ -41,7 +41,7 @@ class Application:
 		# Initialise pygame
 		pygame.init()
 		pygame.display.set_caption(self.title)
-		pygame.display.set_mode(self.size, DOUBLEBUF|OPENGL|RESIZABLE)
+		pygame.display.set_mode(self.size.toTuple(), DOUBLEBUF|OPENGL|RESIZABLE)
 
 		# # Renderer settings (Can be done here)
 		# self.renderer3D.setPerspective(60, self.size[0]/self.size[1], 0.1, 50.0)
