@@ -11,7 +11,7 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
-from renderers import Renderer3D
+from renderer3D import Renderer3D
 from utils import *
 
 # ===============================================================================================
