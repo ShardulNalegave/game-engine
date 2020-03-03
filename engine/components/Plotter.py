@@ -38,3 +38,13 @@ class Plotter:
 		glVertex3fv(vec2.toTuple())
 		glVertex3fv(vec3.toTuple())
 		glEnd()
+
+	# Quadrilateral
+	def quadrilateral(self, vec1, vec2, vec3, vec4):
+		""" Draws a Quadrilateral using vertexes `vec1`, `vec2`, `vec3` and `vec4` """
+		glBegin(GL_QUADS)
+		glVertex3fv(vec1.toTuple())
+		glVertex3fv(vec2.toTuple())
+		glVertex3fv(vec3.toTuple())
+		glVertex3fv(vec4.toTuple())
+		glEnd()
