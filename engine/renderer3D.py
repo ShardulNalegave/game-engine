@@ -55,3 +55,16 @@ class Renderer3D:
 			obj.render()
 		# self.objects["test_1"].render()
 		# self.objects["test_2"].render()
+
+# ================================================================================================
+
+class Camera3D:
+
+	# Init
+	def __init__(self, pos):
+		self.pos = pos
+
+	# Move
+	def move(self, vec):
+		""" Changes the viewpoint of the whole scene """
+		pass
