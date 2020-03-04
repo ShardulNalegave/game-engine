@@ -7,10 +7,9 @@ from utils import *
 
 
 class Box:
-	def __init__(self, name, origin, scale, plotter):
+	def __init__(self, name, origin, scale):
 		self.name = name
 		self.origin = origin
-		self.plotter = plotter
 		self.scale = scale
 		self.shiftVal = Vector3D(0, 0, 0)
 		self.rotateOn = Vector3D(0, 0, 0)
@@ -100,18 +99,15 @@ class Box:
 		self.shiftVal = Vector3D(0, 0, 0)
 		return edges, surfaces
 
-	def render(self):
+	def render(self, plotter):
 		edges, surfaces = self.__getData()
 		if not (self.rotated < 360):
 			self.rotated = 0
 		glPushMatrix()
 		glRotated(self.rotated + self.rotateDegrees, self.rotateOn.x, self.rotateOn.y, self.rotateOn.z)
 		self.rotated += self.rotateDegrees
-		glBegin(GL_LINES)
 		for edge in edges:
-			for vertex in edge:
-				glVertex3fv(vertex)
-		glEnd()
+			plotter.line(edge[0], edge[1])
 		# glBegin(GL_QUADS)
 		# for surface in surfaces:
 		# 	for vertex in surface:

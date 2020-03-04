@@ -47,7 +47,7 @@ class Renderer3D:
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 		for objName, obj in self.objects.items():
 			obj.shift(self.camera.pos.additive())
-			obj.render()
+			obj.render(self.plotter)
 		# self.plotter.line(Vector3D(-1, 0, -1), Vector3D(1, 0, -1))
 
 # ================================================================================================

@@ -14,7 +14,7 @@ app = Application("Test...")
 app.renderer3D.camera.setCamPos(Vector3D(0, 0, 3))
 
 # Add Objects to the class
-app.renderer3D.addObject(Box("test_1", Vector3D(0, 0, 0), Vector3D(2, 2, 2), app.renderer3D.plotter))
+app.renderer3D.addObject(Box("test_1", Vector3D(0, 0, 0), Vector3D(2, 2, 2)))
 # app.renderer3D.addObject(Box("test_2", Vector3D(-1, 0, 0), Vector3D(2, 2, 2)))
 
 # Apply some effects
