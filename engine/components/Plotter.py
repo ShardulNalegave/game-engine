@@ -23,12 +23,15 @@ class Plotter:
 		glEnd()
 
 	# Line
-	def line(self, vec1, vec2):
+	def line(self, vec1, vec2, rotateDegrees, rotateOn):
 		""" Draws a line from vertex `vec1` to vertex `vec2` """
+		glPushMatrix()
+		glRotated(rotateDegrees, rotateOn.x, rotateOn.y, rotateOn.z)
 		glBegin(GL_LINES)
 		glVertex3fv(vec1.toTuple() if isinstance(vec1, Vector3D) else vec1)
 		glVertex3fv(vec2.toTuple() if isinstance(vec2, Vector3D) else vec2)
 		glEnd()
+		glPopMatrix()
 
 	# Triangle
 	def triangle(self, vec1, vec2, vec3):

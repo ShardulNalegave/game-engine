@@ -106,8 +106,11 @@ class Box:
 		glPushMatrix()
 		glRotated(self.rotated + self.rotateDegrees, self.rotateOn.x, self.rotateOn.y, self.rotateOn.z)
 		self.rotated += self.rotateDegrees
+		glBegin(GL_LINES)
 		for edge in edges:
-			plotter.line(edge[0], edge[1])
+			for vertex in edge:
+				glVertex3fv(vertex)
+		glEnd()
 		# glBegin(GL_QUADS)
 		# for surface in surfaces:
 		# 	for vertex in surface:
